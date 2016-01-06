@@ -1,0 +1,15 @@
+{
+  "name": "Pingo",
+  "description": "Pingo App for administration of Pingo",
+  "version": "0.1",
+  "manifest_version": 2,
+  "permissions": [
+    "http://pingo.uni-hamburg.de/","webview","serial"
+  ],
+  "app": {
+    "background": {
+      "scripts": ["main.js","jquery.js"]
+    }
+  },
+  "icons": { "16": "pingo-16.png", "128": "pingo-128.png" }
+}

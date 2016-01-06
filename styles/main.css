@@ -1,0 +1,26 @@
+html, body {
+  height: 100%;
+}
+webview {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#hittlogo {
+	opacity:0.2;
+	right:0;
+	height: 50px;
+	position:absolute
+}
+#hittconsole {
+	left:0;
+	width: 500px;
+	position:absolute
+}
+
+
