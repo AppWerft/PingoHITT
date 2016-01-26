@@ -23,6 +23,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
 
 	chrome.serial.getDevices(function(list) {
 		var serialdevices = list.filter(function(elem) {
+			console.log(elem);
 			return elem.path.match(/tty\.usbserial/);
 		});
 		if (serialdevices) {
@@ -33,16 +34,17 @@ chrome.app.runtime.onLaunched.addListener(function() {
 			}, function onConnect() {
 				console.log('Info: connected with ' + path);
 				$('#hittlogo').fadeTo(100,1.0);
-				console.log($('#hittlogo'));
+			//	console.log($('#hittlogo'));
 				var bar = '';
-				this.connectionId = arguments[0].connectionId;
+				//this.connectionId = arguments[0].connectionId;
+				//console.log('this.connectionId = 	'+this.connectionId);
 				chrome.serial.onReceive.addListener(function (info) {
 					if (info.data) {
 						var payload = String.fromCharCode.apply(null, new Uint8Array(info.data));
 						if (!payload.charAt(payload.length - 1).match(/[\d,]/mg)) {
 							bar += payload.substring(0, payload.length - 1);
 							console.log(bar);
-							$('#hittconsole').html(bar);
+							//$('#hittconsole').html(bar);
 							bar = '';
 						} else {
 							bar += payload;
